@@ -2,33 +2,24 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon Site Musical</title>
+    <title>Mon Site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         body {
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #121212, #1DB954);
+            background: #121212;
             color: white;
             text-align: center;
         }
 
-        header {
-            padding: 40px 20px 20px 20px;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
         .buttons {
-            margin: 30px 0;
+            padding: 40px 0;
         }
 
         button {
-            padding: 12px 25px;
+            padding: 12px 30px;
             margin: 10px;
             border: none;
             border-radius: 25px;
@@ -51,41 +42,28 @@
             max-width: 800px;
             margin: 0 auto 60px auto;
             padding: 20px;
+            display: flex;
             flex-direction: column;
             gap: 25px;
         }
 
         iframe {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
             border-radius: 12px;
-        }
-
-        footer {
-            padding: 20px;
-            font-size: 0.9em;
-            opacity: 0.8;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🎧 Mon Univers</h1>
-</header>
-
 <div class="buttons">
     <button onclick="showSection('playlists')">Playlists</button>
     <button onclick="showSection('memes')">Memes</button>
 </div>
 
-<!-- SECTION PLAYLISTS (vide pour l’instant) -->
 <div id="playlists" class="content">
-    <h2>🎶 Playlists</h2>
-    <p>Contenu à venir...</p>
 </div>
 
-<!-- SECTION MEMES (tes embeds ici) -->
 <div id="memes" class="content">
 
     <iframe src="https://open.spotify.com/embed/track/6Wgv1gBq2gOnLqSp7BKsbj?utm_source=generator"
@@ -115,19 +93,13 @@
 
 </div>
 
-<footer>
-    © 2026 - Site personnalisé
-</footer>
-
 <script>
     function showSection(sectionId) {
         document.getElementById("playlists").style.display = "none";
         document.getElementById("memes").style.display = "none";
-
         document.getElementById(sectionId).style.display = "flex";
     }
 
-    // Afficher memes par défaut
     showSection('memes');
 </script>
 
