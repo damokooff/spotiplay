@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Page protégée</title>
+<script>
+(function() {
+  // Bloque les touches liées à l'inspection
+  document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.key === 'F12') {
+      e.preventDefault();
+      alert("Ce site tu n'inspectera pas !");
+      return false;
+    }
+
+    // Ctrl+Shift+[I/J/C/M] (Chrome, Edge, Firefox)
+    if (e.ctrlKey && e.shiftKey && ['I','J','C','M'].includes(e.key.toUpperCase())) {
+      e.preventDefault();
+      alert("Ce site tu n'inspectera pas !");
+      return false;
+    }
+
+    // Ctrl+[U/S/E/K/F] (afficher source, console, etc.)
+    if (e.ctrlKey && ['U','S','E','K','F'].includes(e.key.toUpperCase())) {
+      e.preventDefault();
+      alert("Ce site tu n'inspectera pas !");
+      return false;
+    }
+  });
+
+  // Bloque le clic droit
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    alert("Ce site tu n'inspectera pas !");
+    return false;
+  });
+})();
+</script>
+</head>
+<body>
+<h1>Page protégée</h1>
+<p>Essaye d’ouvrir les outils de développement ou de faire un clic droit…</p>
+</body>
+</html>
